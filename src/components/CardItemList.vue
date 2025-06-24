@@ -19,7 +19,7 @@ const data = reactive({
 const handleSearchInput = debounce(function (event) {
   router.push({
     query: {
-      searchQuery: event.target.value || route.query.searchQuery,
+      searchQuery: event.target.value,
       sortBy: route.query.sortBy || 'title',
     },
   })
@@ -29,7 +29,7 @@ function handleSort(event) {
   router.push({
     query: {
       searchQuery: route.query.searchQuery || '',
-      sortBy: event.target.value || route.query.sortBy,
+      sortBy: event.target.value,
     },
   })
 }
